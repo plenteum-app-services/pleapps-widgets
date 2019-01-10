@@ -1,0 +1,26 @@
+{
+  "name": "turtlepay-widget",
+  "version": "1.0.0",
+  "description": "TurtlePay Payment Processor JavaScript Widget",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TurtlePay/turtlepay-widget.git"
+  },
+  "keywords": [
+    "turtlecoin",
+    "turtlepay",
+    "cryptocurrency",
+    "payment",
+    "processor"
+  ],
+  "author": "fexra <fexra@protonmail.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TurtlePay/turtlepay-widget/issues"
+  },
+  "homepage": "https://github.com/TurtlePay/turtlepay-widget#readme"
+}
