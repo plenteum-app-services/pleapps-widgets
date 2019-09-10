@@ -108,7 +108,7 @@ var pleButtonModal = document.getElementById("pleButtonModal");
 // creates the button for the turtleCoin pay widget
 var pleButton = document.createElement("input");
 pleButton.type = "button";
-pleButton.value = "Pay with ple";
+pleButton.value = "Pay with PLE";
 pleButton.id = "pleButton";
 pleButton.onclick = function() {
   pleButtonModal.style.display = "block";
@@ -140,4 +140,4 @@ pleButtonDiv = document.querySelector(".ple-btn");
 // pleButtonData = pleButtonIframe.getAttribute("data-turtle");
 const pleButtonPayload = pleButtonDiv.getAttribute("data-plebutton");
 
-pleButtonIframe.src = `https://plebutton.com/pay?buttonPayload=${pleButtonPayload}`;
+pleButtonIframe.src = `https://www.plenteum.com/widgets/button/pay?buttonPayload=${pleButtonPayload}`;
