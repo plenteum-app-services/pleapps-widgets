@@ -1,7 +1,7 @@
-// Create trtl button styles
-var trtlButtonStyle = document.createElement("style");
-trtlButtonStyle.innerHTML = `    /* The Modal (background) */
-    .trtlButtonModal {
+// Create ple button styles
+var pleButtonStyle = document.createElement("style");
+pleButtonStyle.innerHTML = `    /* The Modal (background) */
+    .pleButtonModal {
         display: none;
         /* Hidden by default */
         position: fixed;
@@ -25,7 +25,7 @@ trtlButtonStyle.innerHTML = `    /* The Modal (background) */
     }
 
     /* Modal Content */
-    .trtlButtonModalContent {
+    .pleButtonModalContent {
         background-color: #fefefe;
         margin: auto;
         height: auto;
@@ -36,22 +36,22 @@ trtlButtonStyle.innerHTML = `    /* The Modal (background) */
     }
 
     /* The Close Button */
-    .trtlButtonModalClose {
+    .pleButtonModalClose {
         color: #aaaaaa;
         float: right;
         font-size: 28px;
         font-weight: bold;
     }
 
-    .trtlButtonModalClose:hover,
-    .trtlButtonModalClose:focus {
+    .pleButtonModalClose:hover,
+    .pleButtonModalClose:focus {
         color: #000;
         text-decoration: none;
         cursor: pointer;
     }
 
   /* styling for the created button */
-    #trtlButton {
+    #pleButton {
         border-radius: 4px;
     color: white;
     background-color: #38c172;
@@ -61,83 +61,83 @@ trtlButtonStyle.innerHTML = `    /* The Modal (background) */
 
     }
 
-    #trtlButton:hover {
+    #pleButton:hover {
       background-color: #51d88a;
     }
 
-    #trtlButton:focus {
+    #pleButton:focus {
       outline: none;
     }
-  #trtlButtonIframe {
+  #pleButtonIframe {
     width:100%;
     border:0;
       }
 
     @media only screen and (max-width: 600px) {
-      .trtlButtonModalContent {
+      .pleButtonModalContent {
         width: 85%;
       }
     }`;
 
 // // Get the first script tag
-var trtlButtonref = document.querySelector("script");
+var pleButtonref = document.querySelector("script");
 
 // // Insert our new styles before the first script tag
-trtlButtonref.parentNode.insertBefore(trtlButtonStyle, trtlButtonref);
+pleButtonref.parentNode.insertBefore(pleButtonStyle, pleButtonref);
 
 // creates the modal for the turtlecoin button pop up
-var trtlButtonModalCode = `<div id="trtlButtonModal" class="trtlButtonModal">
+var pleButtonModalCode = `<div id="pleButtonModal" class="pleButtonModal">
     <!-- Modal content -->
-    <div class="trtlButtonModalContent rounded">
-        <span class="trtlButtonModalClose">&times;</span>
+    <div class="pleButtonModalContent rounded">
+        <span class="pleButtonModalClose">&times;</span>
         <div>
             <div class="" style="margin-top:1.5rem">
-                <iframe src="" height="520px" id="trtlButtonIframe"></iframe>
+                <iframe src="" height="520px" id="pleButtonIframe"></iframe>
             </div>
         </div>
     </div>
   </div>`;
 
-var trtlDiv = document.createElement("div");
+var pleDiv = document.createElement("div");
 
-trtlDiv.innerHTML = trtlButtonModalCode;
-document.body.appendChild(trtlDiv);
+pleDiv.innerHTML = pleButtonModalCode;
+document.body.appendChild(pleDiv);
 
-var trtlButtonModal = document.getElementById("trtlButtonModal");
+var pleButtonModal = document.getElementById("pleButtonModal");
 
 // creates the button for the turtleCoin pay widget
-var trtlButton = document.createElement("input");
-trtlButton.type = "button";
-trtlButton.value = "Pay with TRTL";
-trtlButton.id = "trtlButton";
-trtlButton.onclick = function() {
-  trtlButtonModal.style.display = "block";
+var pleButton = document.createElement("input");
+pleButton.type = "button";
+pleButton.value = "Pay with ple";
+pleButton.id = "pleButton";
+pleButton.onclick = function() {
+  pleButtonModal.style.display = "block";
 };
 
 // Get the <span> element that closes the modal
-var trtlButtonModalClose = document.getElementsByClassName(
-  "trtlButtonModalClose"
+var pleButtonModalClose = document.getElementsByClassName(
+  "pleButtonModalClose"
 )[0];
 
 // When the user clicks on <span> (x), close the modal
-trtlButtonModalClose.onclick = function() {
-  trtlButtonModal.style.display = "none";
+pleButtonModalClose.onclick = function() {
+  pleButtonModal.style.display = "none";
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == trtlButtonModal) {
-    trtlButtonModal.style.display = "none";
+  if (event.target == pleButtonModal) {
+    pleButtonModal.style.display = "none";
   }
 };
 
-document.querySelector(".trtl-btn").appendChild(trtlButton);
+document.querySelector(".ple-btn").appendChild(pleButton);
 
 // populate the iframe url with your hashed data from TurtlePay
-trtlButtonIframe = document.querySelector("#trtlButtonIframe");
-trtlButtonDiv = document.querySelector(".trtl-btn");
+pleButtonIframe = document.querySelector("#pleButtonIframe");
+pleButtonDiv = document.querySelector(".ple-btn");
 
-// trtlButtonData = trtlButtonIframe.getAttribute("data-turtle");
-const trtlButtonPayload = trtlButtonDiv.getAttribute("data-trtlbutton");
+// pleButtonData = pleButtonIframe.getAttribute("data-turtle");
+const pleButtonPayload = pleButtonDiv.getAttribute("data-plebutton");
 
-trtlButtonIframe.src = `https://trtlbutton.com/pay?buttonPayload=${trtlButtonPayload}`;
+pleButtonIframe.src = `https://plebutton.com/pay?buttonPayload=${pleButtonPayload}`;
